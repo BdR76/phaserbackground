@@ -53,24 +53,24 @@ function updateStars(pGame, pGrp) {
 }
 
 function doFadeIn(pGame, bFadeIn) {
-    // fade in or out
-    var alphaFrom = 0.0;
-    var alphaGoal = 1.0;
-    if (bFadeIn==true) {
-        alphaFrom = 1.0;
-        alphaGoal = 0.0;
-    }
-    // set black box
-    var blackbox = pGame.add.graphics(0, 0);
-    blackbox.beginFill(0x000000, 1.0);
-    blackbox.drawRect(0, 0, 800, 600);
+	// fade in or out
+	var alphaFrom = 0.0;
+	var alphaGoal = 1.0;
+	if (bFadeIn==true) {
+		alphaFrom = 1.0;
+		alphaGoal = 0.0;
+	}
+	// set black box
+	var blackbox = pGame.add.graphics(0, 0);
+	blackbox.beginFill(0x000000, 1.0);
+	blackbox.drawRect(0, 0, 800, 600);
 	blackbox.alpha = alphaFrom;
-    // tween alpha to fade in or out
-    var tw = pGame.add.tween(blackbox);
-    tw.to( { alpha: alphaGoal}, 1000, Phaser.Easing.Linear.None, true);
+	// tween alpha to fade in or out
+	var tw = pGame.add.tween(blackbox);
+	tw.to( { alpha: alphaGoal}, 1000, Phaser.Easing.Linear.None, true);
 	// remove graphics after fade complete
-    //tw.onComplete.add(function () {
+	//tw.onComplete.add(function () {
 	//	blackbox.destroy();
 	//});
-    return tw;
+	return tw;
 }
